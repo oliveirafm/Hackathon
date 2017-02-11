@@ -1,0 +1,98 @@
+﻿@model Hackathon.Models.BankMovement
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>BankMovement</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Company.CompanyName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Company.CompanyName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeAccount.UserId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TransactionDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TransactionDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AmountDeposit)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AmountDeposit)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceDeposit)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceDeposit)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceDepositRef)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceDepositRef)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AmountWithdrawal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AmountWithdrawal)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DestinationWithdrawal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DestinationWithdrawal)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DestinationWithdrawalRef)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DestinationWithdrawalRef)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BankMovementId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

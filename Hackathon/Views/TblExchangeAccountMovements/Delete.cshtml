@@ -1,0 +1,120 @@
+﻿@model Hackathon.Models.Entities.System.ExchangeAccountMovement
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ExchangeAccountMovement</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Company.CompanyName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Company.CompanyName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ContractedServiceConfiguration.ExchangeServiceParameter1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ContractedServiceConfiguration.ExchangeServiceParameter1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DiversificationPlanItem.Observations)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DiversificationPlanItem.Observations)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeAccount.UserId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeService.ExchangeServiceName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeService.ExchangeServiceName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceInvoice.PaymentService)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceInvoice.PaymentService)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TransactionDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TransactionDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AmountDeposit)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AmountDeposit)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceDeposit)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceDeposit)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AmountWithdrawal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AmountWithdrawal)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DestinationWithdrawal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DestinationWithdrawal)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

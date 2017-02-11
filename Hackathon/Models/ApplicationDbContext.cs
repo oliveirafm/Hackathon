@@ -33,12 +33,9 @@ namespace Hackathon.Models
         public DbSet<ExchangeAccount> ExchangeAccounts { get; set; }
 
         public DbSet<Company> Companies { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<BankMovement> BankMovements { get; set; }
-        public DbSet<ProductCatalogue> ProductCatalogues { get; set; }
-        public DbSet<PurchaseCatalogue> PurchaseCatalogues { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
         public DbSet<BlockChainAccount> BlockChainAccounts { get; set; }
@@ -46,5 +43,11 @@ namespace Hackathon.Models
         public DbSet<SmartContract> SmartContracts { get; set; }
         public DbSet<TransactionLog> TransactionLogs { get; set; }
 
+        public System.Data.Entity.DbSet<ContractedServiceConfiguration> ContractedServiceConfigurations { get; set; }
+        public System.Data.Entity.DbSet<ExchangeService> ExchangeServices { get; set; }
+        public System.Data.Entity.DbSet<DiversificationPlan> DiversificationPlans { get; set; }
+        public System.Data.Entity.DbSet<DiversificationPlanItem> DiversificationPlanItems { get; set; }
+        public System.Data.Entity.DbSet<ExchangeAccountMovement> ExchangeAccountMovements { get; set; }
+        public System.Data.Entity.DbSet<InvoicePaymentDivision> InvoicePaymentDivisions { get; set; }
     }
 }

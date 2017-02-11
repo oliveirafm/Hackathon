@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Hackathon.Models.Invoice>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuerCompany.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuerVatNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueDateTimestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDateTimestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentServiceHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductVatPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductVatValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerVatNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceVatValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceVatPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceStatus)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExchangeAccount.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuerCompany.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuerVatNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDateTimestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDateTimestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentService)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentServiceHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductVatPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductVatValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerVatNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceVatValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceVatPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.InvoiceId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.InvoiceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.InvoiceId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

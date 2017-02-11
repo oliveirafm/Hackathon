@@ -1,0 +1,98 @@
+﻿@model Hackathon.Models.BankAccount
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>BankAccount</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Company.CompanyName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Company.CompanyName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeAccount.UserId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OwnerCompanyName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OwnerCompanyName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountBalance)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AccountBalance)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IssuerCompanyActivityCountry)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IssuerCompanyActivityCountry)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.currentYearPensionRetained)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.currentYearPensionRetained)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.accumulatedPensionSavings)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.accumulatedPensionSavings)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.currentYearTaxRetained)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.currentYearTaxRetained)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.currentYearRentingRetained)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.currentYearRentingRetained)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BankAccountId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

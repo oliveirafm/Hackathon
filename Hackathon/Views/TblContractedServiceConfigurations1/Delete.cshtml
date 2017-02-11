@@ -1,0 +1,88 @@
+﻿@model Hackathon.Models.ContractedServiceConfiguration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ContractedServiceConfiguration</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeAccount.UserId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeService.ExchangeServiceName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeService.ExchangeServiceName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter3)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter3)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter4)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter4)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter5)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter5)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

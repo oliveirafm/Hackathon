@@ -19,7 +19,8 @@ namespace Hackathon.Models
         [Display(Name = "Issuer VAT Number")]
         public int? IssuerVatNumber { get; set; }
 
-        [ForeignKey("Issuer Company")]
+        [ForeignKey("IssuerCompany")]
+        [Display(Name = "Issuer Company")]
         public int? IssuerCompanyId { get; set; }
         public virtual Company IssuerCompany { get; set; }
 

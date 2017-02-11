@@ -17,7 +17,7 @@ namespace Hackathon.Models
 
         public bool AvailableInMarket { get; set; }
 
-        [ForeignKey("SmartContract")]
+        [ForeignKey("ServiceSmartContract")]
         public int? SmartContractId { get; set; }
         public virtual SmartContract ServiceSmartContract { get; set; }
     }

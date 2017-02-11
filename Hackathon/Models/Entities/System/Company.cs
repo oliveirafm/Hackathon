@@ -87,9 +87,12 @@ namespace Hackathon.Models
         public string IBAN { get; set; }
 
         public ICollection<Customer> Customers { get; set; } = new HashSet<Customer>();
+
         public ICollection<Invoice> Invoices { get; set; } = new HashSet<Invoice>();
+
         public ICollection<BankMovement> BankMovements { get; set; } = new HashSet<BankMovement>();
 
+        public ICollection<BankAccount> BankAccounts { get; set; } = new HashSet<BankAccount>();
 
 
     }

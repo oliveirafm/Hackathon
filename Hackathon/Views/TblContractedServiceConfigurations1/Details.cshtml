@@ -1,0 +1,82 @@
+﻿@model Hackathon.Models.ContractedServiceConfiguration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ContractedServiceConfiguration</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeAccount.UserId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeService.ExchangeServiceName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeService.ExchangeServiceName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter3)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter3)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter4)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter4)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExchangeServiceParameter5)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExchangeServiceParameter5)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ContractedServiceConfigurationId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

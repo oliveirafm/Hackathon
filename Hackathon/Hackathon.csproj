@@ -179,6 +179,18 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\BankAccountsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblBankAccountsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblBankMovementsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblCompaniesController.cs" />
+    <Compile Include="Controllers\CRUDs\TblContractedServiceConfigurations1Controller.cs" />
+    <Compile Include="Controllers\CRUDs\TblCustomersController.cs" />
+    <Compile Include="Controllers\CRUDs\TblDiversificationPlanItemsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblDiversificationPlansController.cs" />
+    <Compile Include="Controllers\CRUDs\TblExchangeAccountMovementsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblExchangeAccountsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblExchangeServicesController.cs" />
+    <Compile Include="Controllers\CRUDs\TblInvoicePaymentDivisionsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblInvoicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Emuns\Emuns.cs" />
@@ -196,6 +208,10 @@
     <Compile Include="Migrations\201702111422027_bankaccount_extra.cs" />
     <Compile Include="Migrations\201702111422027_bankaccount_extra.Designer.cs">
       <DependentUpon>201702111422027_bankaccount_extra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702111633562_Added_First_table_revision.cs" />
+    <Compile Include="Migrations\201702111633562_Added_First_table_revision.Designer.cs">
+      <DependentUpon>201702111633562_Added_First_table_revision.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -222,9 +238,6 @@
     <Compile Include="Models\Entities\System\ExchangeServices.cs" />
     <Compile Include="Models\Entities\System\Invoice.cs" />
     <Compile Include="Models\Entities\System\InvoicePaymentDivision.cs" />
-    <Compile Include="Models\Entities\System\Product.cs" />
-    <Compile Include="Models\Entities\System\ProductCatalogue.cs" />
-    <Compile Include="Models\Entities\System\PurchaseCatalogue.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ViewModels\ChamberOfCommerceViewModel.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
@@ -287,6 +300,66 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\TblBankAccounts\Create.cshtml" />
+    <Content Include="Views\TblBankAccounts\Delete.cshtml" />
+    <Content Include="Views\TblBankAccounts\Details.cshtml" />
+    <Content Include="Views\TblBankAccounts\Edit.cshtml" />
+    <Content Include="Views\TblBankAccounts\Index.cshtml" />
+    <Content Include="Views\TblBankMovements\Create.cshtml" />
+    <Content Include="Views\TblBankMovements\Delete.cshtml" />
+    <Content Include="Views\TblBankMovements\Details.cshtml" />
+    <Content Include="Views\TblBankMovements\Edit.cshtml" />
+    <Content Include="Views\TblBankMovements\Index.cshtml" />
+    <Content Include="Views\TblCompanies\Create.cshtml" />
+    <Content Include="Views\TblCompanies\Delete.cshtml" />
+    <Content Include="Views\TblCompanies\Details.cshtml" />
+    <Content Include="Views\TblCompanies\Edit.cshtml" />
+    <Content Include="Views\TblCompanies\Index.cshtml" />
+    <Content Include="Views\TblContractedServiceConfigurations1\Create.cshtml" />
+    <Content Include="Views\TblContractedServiceConfigurations1\Delete.cshtml" />
+    <Content Include="Views\TblContractedServiceConfigurations1\Details.cshtml" />
+    <Content Include="Views\TblContractedServiceConfigurations1\Edit.cshtml" />
+    <Content Include="Views\TblContractedServiceConfigurations1\Index.cshtml" />
+    <Content Include="Views\TblCustomers\Create.cshtml" />
+    <Content Include="Views\TblCustomers\Delete.cshtml" />
+    <Content Include="Views\TblCustomers\Details.cshtml" />
+    <Content Include="Views\TblCustomers\Edit.cshtml" />
+    <Content Include="Views\TblCustomers\Index.cshtml" />
+    <Content Include="Views\TblDiversificationPlans\Create.cshtml" />
+    <Content Include="Views\TblDiversificationPlans\Delete.cshtml" />
+    <Content Include="Views\TblDiversificationPlans\Details.cshtml" />
+    <Content Include="Views\TblDiversificationPlans\Edit.cshtml" />
+    <Content Include="Views\TblDiversificationPlans\Index.cshtml" />
+    <Content Include="Views\TblDiversificationPlanItems\Create.cshtml" />
+    <Content Include="Views\TblDiversificationPlanItems\Delete.cshtml" />
+    <Content Include="Views\TblDiversificationPlanItems\Details.cshtml" />
+    <Content Include="Views\TblDiversificationPlanItems\Edit.cshtml" />
+    <Content Include="Views\TblDiversificationPlanItems\Index.cshtml" />
+    <Content Include="Views\TblExchangeAccounts\Create.cshtml" />
+    <Content Include="Views\TblExchangeAccounts\Delete.cshtml" />
+    <Content Include="Views\TblExchangeAccounts\Details.cshtml" />
+    <Content Include="Views\TblExchangeAccounts\Edit.cshtml" />
+    <Content Include="Views\TblExchangeAccounts\Index.cshtml" />
+    <Content Include="Views\TblExchangeAccountMovements\Create.cshtml" />
+    <Content Include="Views\TblExchangeAccountMovements\Delete.cshtml" />
+    <Content Include="Views\TblExchangeAccountMovements\Details.cshtml" />
+    <Content Include="Views\TblExchangeAccountMovements\Edit.cshtml" />
+    <Content Include="Views\TblExchangeAccountMovements\Index.cshtml" />
+    <Content Include="Views\TblExchangeServices\Create.cshtml" />
+    <Content Include="Views\TblExchangeServices\Delete.cshtml" />
+    <Content Include="Views\TblExchangeServices\Details.cshtml" />
+    <Content Include="Views\TblExchangeServices\Edit.cshtml" />
+    <Content Include="Views\TblExchangeServices\Index.cshtml" />
+    <Content Include="Views\TblInvoices\Create.cshtml" />
+    <Content Include="Views\TblInvoices\Delete.cshtml" />
+    <Content Include="Views\TblInvoices\Details.cshtml" />
+    <Content Include="Views\TblInvoices\Edit.cshtml" />
+    <Content Include="Views\TblInvoices\Index.cshtml" />
+    <Content Include="Views\TblInvoicePaymentDivisions\Create.cshtml" />
+    <Content Include="Views\TblInvoicePaymentDivisions\Delete.cshtml" />
+    <Content Include="Views\TblInvoicePaymentDivisions\Details.cshtml" />
+    <Content Include="Views\TblInvoicePaymentDivisions\Edit.cshtml" />
+    <Content Include="Views\TblInvoicePaymentDivisions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702111422027_bankaccount_extra.resx">
       <DependentUpon>201702111422027_bankaccount_extra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702111633562_Added_First_table_revision.resx">
+      <DependentUpon>201702111633562_Added_First_table_revision.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

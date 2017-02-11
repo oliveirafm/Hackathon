@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Hackathon.Models.DiversificationPlanItem>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractedServiceConfiguration.ExchangeServiceParameter1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiversificationPlan.Observations)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExchangeService.ExchangeServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observations)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractedServiceConfiguration.ExchangeServiceParameter1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiversificationPlan.Observations)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExchangeService.ExchangeServiceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observations)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.DiversificationPlanItemId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.DiversificationPlanItemId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.DiversificationPlanItemId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

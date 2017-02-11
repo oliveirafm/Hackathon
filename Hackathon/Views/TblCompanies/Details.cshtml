@@ -1,0 +1,234 @@
+﻿@model Hackathon.Models.Company
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Company</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CompanyName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VatNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VatNumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyActivityCountry)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CompanyActivityCountry)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyActivity)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CompanyActivity)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanySector)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CompanySector)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.KvkNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.KvkNumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BranchNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BranchNumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Rsin)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rsin)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BusinessName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BusinessName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SbiCode)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SbiCode)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SbiCodeDescription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SbiCodeDescription)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AddressType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AddressType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BagId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BagId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Street)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Street)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HouseNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HouseNumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HouseNumberAddition)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HouseNumberAddition)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PostalCode)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyCountry)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CompanyCountry)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GPSLatitude)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GPSLatitude)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GPSLongitude)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GPSLongitude)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RijksdriehoekX)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RijksdriehoekX)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RijksdriehoekY)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RijksdriehoekY)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RijksdriehoekZ)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RijksdriehoekZ)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyBlockChainAddress)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CompanyBlockChainAddress)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IBAN)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IBAN)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

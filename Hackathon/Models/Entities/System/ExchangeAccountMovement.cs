@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Hackathon.Models.Entities.System
+namespace Hackathon.Models
 {
     public class ExchangeAccountMovement
     {

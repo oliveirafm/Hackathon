@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Hackathon.Models.ExchangeService>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceSmartContract.ContractName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExchangeServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableInMarket)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceSmartContract.ContractName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExchangeServiceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableInMarket)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ExchangeServiceId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ExchangeServiceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ExchangeServiceId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

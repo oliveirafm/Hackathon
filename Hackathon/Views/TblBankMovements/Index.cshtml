@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Hackathon.Models.BankMovement>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountDeposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SourceDeposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SourceDepositRef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountWithdrawal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationWithdrawal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationWithdrawalRef)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExchangeAccount.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountDeposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceDeposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceDepositRef)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountWithdrawal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationWithdrawal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationWithdrawalRef)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BankMovementId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BankMovementId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BankMovementId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
