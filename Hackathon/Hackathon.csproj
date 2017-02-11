@@ -201,6 +201,8 @@
     <Compile Include="Models\Entities\System\Company.cs" />
     <Compile Include="Models\Entities\System\CompanyDepartment.cs" />
     <Compile Include="Models\Entities\System\Customer.cs" />
+    <Compile Include="Models\Entities\System\DiversificationPlan.cs" />
+    <Compile Include="Models\Entities\System\DiversificationPlanItem.cs" />
     <Compile Include="Models\Entities\System\Invoice.cs" />
     <Compile Include="Models\Entities\System\Product.cs" />
     <Compile Include="Models\Entities\System\ProductCatalogue.cs" />
