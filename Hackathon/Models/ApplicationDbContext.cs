@@ -30,15 +30,15 @@ namespace Hackathon.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Company> TaxPoc2Companies { get; set; }
-        public DbSet<CompanyDepartment> TaxPoc2CompanyDepartments { get; set; }
-        public DbSet<Product> TaxPoc2Products { get; set; }
-        public DbSet<Invoice> TaxPoc2Invoices { get; set; }
-        public DbSet<BankAccount> TaxPoc2BankAccounts { get; set; }
-        public DbSet<BankMovement> TaxPoc2BankMovements { get; set; }
-        public DbSet<ProductCatalogue> TaxPoc2ProductCatalogues { get; set; }
-        public DbSet<PurchaseCatalogue> TaxPoc2PurchaseCatalogues { get; set; }
-        public DbSet<Customer> TaxPoc2Customers { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<CompanyDepartment> CompanyDepartments { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
+        public DbSet<BankMovement> BankMovements { get; set; }
+        public DbSet<ProductCatalogue> ProductCatalogues { get; set; }
+        public DbSet<PurchaseCatalogue> PurchaseCatalogues { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public DbSet<BlockChainAccount> BlockChainAccounts { get; set; }
         public DbSet<BlockChainServer> BlockChainServers { get; set; }
