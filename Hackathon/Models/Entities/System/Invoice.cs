@@ -88,17 +88,10 @@ namespace Hackathon.Models
 
         #region hackathon
 
-        [Display(Name = "Plan"), Required]
-        public DiversificationPlan plan { get; set; }
+        [Display(Name = "PlanItens"), Required]
+        public ICollection<DiversificationPlanItem> DiversificationPlanItens { get; set; } = new HashSet<DiversificationPlanItem>();
 
-        public bool setPlan(DiversificationPlan aPlan)
-        {
-            if (plan != null) // plan exists no change allowed
-                return false;
-            
-            this.plan = aPlan;
-            return true;  
-        }
+
 
         #endregion
     }
