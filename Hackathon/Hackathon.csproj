@@ -213,11 +213,15 @@
     <Compile Include="Models\Entities\System\BankAccount.cs" />
     <Compile Include="Models\Entities\System\BankMovement.cs" />
     <Compile Include="Models\Entities\System\Company.cs" />
-    <Compile Include="Models\Entities\System\CompanyDepartment.cs" />
+    <Compile Include="Models\Entities\System\ContractedServiceConfiguration.cs" />
     <Compile Include="Models\Entities\System\Customer.cs" />
     <Compile Include="Models\Entities\System\DiversificationPlan.cs" />
     <Compile Include="Models\Entities\System\DiversificationPlanItem.cs" />
+    <Compile Include="Models\Entities\System\ExchangeAccount.cs" />
+    <Compile Include="Models\Entities\System\ExchangeAccountMovement.cs" />
+    <Compile Include="Models\Entities\System\ExchangeServices.cs" />
     <Compile Include="Models\Entities\System\Invoice.cs" />
+    <Compile Include="Models\Entities\System\InvoicePaymentDivision.cs" />
     <Compile Include="Models\Entities\System\Product.cs" />
     <Compile Include="Models\Entities\System\ProductCatalogue.cs" />
     <Compile Include="Models\Entities\System\PurchaseCatalogue.cs" />

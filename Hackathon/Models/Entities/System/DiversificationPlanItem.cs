@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Hackathon.Models
 {
 
-    public enum valueType { Value, Percentage};
 
     public class DiversificationPlanItem
     {
@@ -24,7 +23,17 @@ namespace Hackathon.Models
         public valueType Type { get; set; }
 
         [Display(Name = "Observations")]
+
         public string Observations { get; set; }
+
+
+        [ForeignKey("ExchangeService")]
+        public int? ExchangeServiceId { get; set; }
+        public virtual ExchangeService ExchangeService { get; set; }
+
+        [ForeignKey("ContractedServiceConfiguration")]
+        public int? ContractedServiceConfigurationId { get; set; }
+        public virtual ContractedServiceConfiguration ContractedServiceConfiguration { get; set; }
 
     }
 }
