@@ -30,8 +30,9 @@ namespace Hackathon.Models
             return new ApplicationDbContext();
         }
 
+        public DbSet<ExchangeAccount> ExchangeAccounts { get; set; }
+
         public DbSet<Company> Companies { get; set; }
-        public DbSet<CompanyDepartment> CompanyDepartments { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }

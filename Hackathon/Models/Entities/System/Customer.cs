@@ -9,16 +9,19 @@ namespace Hackathon.Models
         [Key]
         public int CustomerId { get; set; }
 
-        [Display(Name = "Company")]
+        [ForeignKey("ExchangeAccount")]
+        public int? ExchangeAccountId { get; set; }
+        public virtual ExchangeAccount ExchangeAccount { get; set; }
+
         [ForeignKey("Company")]
         public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
-        [Display(Name = "Customer")]
-        [ForeignKey("CustomerCompany")]
-        public int? CustomerCompanyId { get; set; }
-        public virtual Company CustomerCompany { get; set; }
+        [Display(Name = "Customer Name")]
+        public string CustomerName { get; set; }
 
+        [Display(Name = "Customer VAT Number")]
+        public int? CustomerVatNumber { get; set; }
 
     }
 }

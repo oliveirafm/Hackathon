@@ -6,7 +6,7 @@ namespace Hackathon.Models
     public class Company
     {
         [Key]
-        public int Index { get; set; }
+        public int CompanyId { get; set; }
 
         [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
@@ -83,31 +83,14 @@ namespace Hackathon.Models
         [Display(Name = "Blockchain Address")]
         public string CompanyBlockChainAddress { get; set; }
 
+        [Display(Name = "IBAN")]
+        public string IBAN { get; set; }
+
         public ICollection<Customer> Customers { get; set; } = new HashSet<Customer>();
         public ICollection<Invoice> Invoices { get; set; } = new HashSet<Invoice>();
         public ICollection<BankMovement> BankMovements { get; set; } = new HashSet<BankMovement>();
 
-        public ICollection<CompanyDepartment> CompanyDepartments { get; set; } = new HashSet<CompanyDepartment>();
 
-        #region hackathon
-
-        [Display(Name = "Diversification Plans History"), Required]
-        public ICollection<DiversificationPlan> Plans { get; set; } = new HashSet<DiversificationPlan>();
-
-        /// <summary>
-        /// Should force last plan to end date
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public void addDiversificationPlan(DiversificationPlan plan)
-        {
-            this.Plans.Add(plan);
-        }
-
-        [Display(Name = "IBAN"), Required]
-        public string IBAN { get; set; }
-
-        #endregion
 
     }
 }
