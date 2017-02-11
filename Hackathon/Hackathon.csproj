@@ -200,6 +200,8 @@
     <Compile Include="Models\Entities\TaxPoc2Entities\Company.cs" />
     <Compile Include="Models\Entities\TaxPoc2Entities\CompanyDepartment.cs" />
     <Compile Include="Models\Entities\TaxPoc2Entities\Customer.cs" />
+    <Compile Include="Models\Entities\TaxPoc2Entities\DiversificationPlan.cs" />
+    <Compile Include="Models\Entities\TaxPoc2Entities\DiversificationPlanItem.cs" />
     <Compile Include="Models\Entities\TaxPoc2Entities\Invoice.cs" />
     <Compile Include="Models\Entities\TaxPoc2Entities\Product.cs" />
     <Compile Include="Models\Entities\TaxPoc2Entities\ProductCatalogue.cs" />

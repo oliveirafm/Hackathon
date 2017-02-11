@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hackathon.Models
@@ -17,6 +18,25 @@ namespace Hackathon.Models
         [ForeignKey("CustomerCompany")]
         public long? CustomerCompanyIndex { get; set; }
         public virtual TaxPoc2Company CustomerCompany { get; set; }
+
+
+
+        #region hackathon
+
+        public ICollection<DiversificationPlan> Plans { get; set; } = new HashSet<DiversificationPlan>();
+
+        /// <summary>
+        /// Should force last plan to end date
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public void addDiversificationPlan(DiversificationPlan plan)
+        {
+            this.Plans.Add(plan);
+        }
+
+
+        #endregion
 
     }
 }

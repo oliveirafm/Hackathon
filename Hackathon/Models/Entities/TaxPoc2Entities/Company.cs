@@ -88,5 +88,26 @@ namespace Hackathon.Models
         public ICollection<TaxPoc2BankMovement> BankMovements { get; set; } = new HashSet<TaxPoc2BankMovement>();
 
         public ICollection<TaxPoc2CompanyDepartment> CompanyDepartments { get; set; } = new HashSet<TaxPoc2CompanyDepartment>();
+
+        #region hackathon
+
+        [Display(Name = "Diversification Plans History"), Required]
+        public ICollection<DiversificationPlan> Plans { get; set; } = new HashSet<DiversificationPlan>();
+
+        /// <summary>
+        /// Should force last plan to end date
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public void addDiversificationPlan(DiversificationPlan plan)
+        {
+            this.Plans.Add(plan);
+        }
+
+        [Display(Name = "IBAN"), Required]
+        public string IBAN { get; set; }
+
+        #endregion
+
     }
 }

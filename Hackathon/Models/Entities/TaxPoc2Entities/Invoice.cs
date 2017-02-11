@@ -85,5 +85,21 @@ namespace Hackathon.Models
         [Display(Name = "Invoice Status")]
         public InvoiceStatus InvoiceStatus { get; set; }
 
+
+        #region hackathon
+
+        [Display(Name = "Plan"), Required]
+        public DiversificationPlan plan { get; set; }
+
+        public bool setPlan(DiversificationPlan aPlan)
+        {
+            if (plan != null) // plan exists no change allowed
+                return false;
+            
+            this.plan = aPlan;
+            return true;  
+        }
+
+        #endregion
     }
 }
