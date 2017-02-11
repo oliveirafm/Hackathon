@@ -1,0 +1,6 @@
+exclude:
+- /Hackathon/Scripts/.*
+component_depth: 1
+languages:
+- csharp
+- javascript
