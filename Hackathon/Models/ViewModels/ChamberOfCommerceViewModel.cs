@@ -21,7 +21,8 @@ namespace Hackathon.Models
         public string CompanySearchName { get; set; }
 
 
-        public long Index { get; set; }
+        //public long Index { get; set; }
+        public int? CompanyId { get; set; }
 
         public string CompanyName { get; set; }
 

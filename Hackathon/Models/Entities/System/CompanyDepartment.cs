@@ -10,7 +10,7 @@ namespace Hackathon.Models
     public class CompanyDepartment
     {
         [Key]
-        public long Index { get; set; }
+        public int CompanyDepartmentId { get; set; }
 
         [Display(Name = "Department Name")]
         public string CompanyDepartmentName { get; set; }
@@ -20,7 +20,7 @@ namespace Hackathon.Models
 
         [Display(Name = "Company")]
         [ForeignKey("Company")]
-        public long? CompanyIndex { get; set; }
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
     }
