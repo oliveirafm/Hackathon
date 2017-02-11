@@ -8,10 +8,10 @@ namespace Hackathon.Models
     public class DiversificationPlan
     {
         [Key]
-        public long Index { get; set; }
+        public int DiversificationPlanId { get; set; }
 
         [ForeignKey("Company")]
-        public long? CompanyIndex { get; set; }
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
         

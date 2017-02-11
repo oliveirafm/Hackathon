@@ -10,11 +10,11 @@ namespace Hackathon.Models
     public class DiversificationPlanItem
     {
         [Key]
-        public long Index { get; set; }
+        public int DiversificationPlanItemId { get; set; }
 
         [ForeignKey("DiversificationPlan")]
-        public long? DiversificationPlanIndex { get; set; }
-        public virtual DiversificationPlan Plan { get; set; }
+        public int? DiversificationPlanId { get; set; }
+        public virtual DiversificationPlan DiversificationPlan { get; set; }
 
         
         [Display(Name = "Value")]

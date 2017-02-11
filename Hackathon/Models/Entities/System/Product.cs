@@ -6,7 +6,7 @@ namespace Hackathon.Models
     public class Product
     {
         [Key]
-        public long Index { get; set; }
+        public int ProductId { get; set; }
 
         [Display(Name = "Serial Number")]
         public int? ProductSerialNumber { get; set; }

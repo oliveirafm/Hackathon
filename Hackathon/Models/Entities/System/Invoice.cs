@@ -8,7 +8,7 @@ namespace Hackathon.Models
     public class Invoice
     {
         [Key]
-        public long Index { get; set; }
+        public int InvoiceId { get; set; }
 
         [Display(Name = "Issuer Company")]
         public string IssuerCompanyName { get; set; }
@@ -21,7 +21,7 @@ namespace Hackathon.Models
         public Country IssuerCompanyActivityCountry { get; set; }
 
         [ForeignKey("IssuerCompany")]
-        public long? IssuerCompanyIndex { get; set; }
+        public int? IssuerCompanyId { get; set; }
         public virtual Company IssuerCompany { get; set; }
 
 
@@ -57,7 +57,7 @@ namespace Hackathon.Models
         public decimal? ProductVatValue { get; set; }
 
         [ForeignKey("Product")]
-        public long? ProductIndex { get; set; }
+        public int? ProductId { get; set; }
         public virtual Product Product { get; set; }
 
 
@@ -73,7 +73,7 @@ namespace Hackathon.Models
         public Country CustomerCompanyActivityCountry { get; set; }
 
         [ForeignKey("CustomerCompany")]
-        public long? CustomerCompanyIndex { get; set; }
+        public int? CustomerCompanyId { get; set; }
         public virtual Company CustomerCompany { get; set; }
 
         [Display(Name = "Invoice Value")]

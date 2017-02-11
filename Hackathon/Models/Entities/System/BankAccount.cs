@@ -6,10 +6,10 @@ namespace Hackathon.Models
     public class BankAccount
     {
         [Key]
-        public long Index { get; set; }
+        public int BankAccountId { get; set; }
 
         [ForeignKey("Company")]
-        public long? CompanyIndex { get; set; }
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
         [Display(Name = "Account Company")]

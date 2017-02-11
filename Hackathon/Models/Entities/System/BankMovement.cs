@@ -8,10 +8,10 @@ namespace Hackathon.Models
     public class BankMovement
     {
         [Key]
-        public long Index { get; set; }
+        public int BankMovementId { get; set; }
 
         [ForeignKey("Company")]
-        public long? CompanyIndex { get; set; }
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
         [Display(Name = "Date")]
@@ -21,13 +21,15 @@ namespace Hackathon.Models
         public decimal? AmountDeposit { get; set; }
         [Display(Name = "Deposit Source")]
         public String SourceDeposit { get; set; }
-        public long? SourceDepositIndex { get; set; }
+
+        public int? SourceDepositId { get; set; }
 
         [Display(Name = "Withdrawal Amount")]
         public decimal? AmountWithdrawal { get; set; }
         [Display(Name = "Withdrawal Source")]
         public String DestinationWithdrawal { get; set; }
-        public long? DestinationWithdrawalIndex { get; set; }
+
+        public int? DestinationWithdrawalId { get; set; }
 
         [Display(Name = "Is VAT")]
         public bool isTaxationTransaction { get; set; }
