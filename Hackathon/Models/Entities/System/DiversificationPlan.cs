@@ -12,7 +12,7 @@ namespace Hackathon.Models
 
         [ForeignKey("Company")]
         public long? CompanyIndex { get; set; }
-        public virtual TaxPoc2Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         
         [Display(Name = "Valid From"), Required]

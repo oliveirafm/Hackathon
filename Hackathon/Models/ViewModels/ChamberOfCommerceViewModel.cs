@@ -7,9 +7,9 @@ namespace Hackathon.Models
 {
     public class ChamberOfCommerceViewModel
     {
-        public TaxPoc2Company Company { get; set; }
+        public Company Company { get; set; }
 
-        public List<TaxPoc2Company> Companies { get; set; }
+        public List<Company> Companies { get; set; }
 
         public Item SelectedItem { get; set; }
 

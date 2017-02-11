@@ -30,15 +30,15 @@ namespace Hackathon.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<TaxPoc2Company> TaxPoc2Companies { get; set; }
-        public DbSet<TaxPoc2CompanyDepartment> TaxPoc2CompanyDepartments { get; set; }
-        public DbSet<TaxPoc2Product> TaxPoc2Products { get; set; }
-        public DbSet<TaxPoc2Invoice> TaxPoc2Invoices { get; set; }
-        public DbSet<TaxPoc2BankAccount> TaxPoc2BankAccounts { get; set; }
-        public DbSet<TaxPoc2BankMovement> TaxPoc2BankMovements { get; set; }
-        public DbSet<TaxPoc2ProductCatalogue> TaxPoc2ProductCatalogues { get; set; }
-        public DbSet<TaxPoc2PurchaseCatalogue> TaxPoc2PurchaseCatalogues { get; set; }
-        public DbSet<TaxPoc2Customer> TaxPoc2Customers { get; set; }
+        public DbSet<Company> TaxPoc2Companies { get; set; }
+        public DbSet<CompanyDepartment> TaxPoc2CompanyDepartments { get; set; }
+        public DbSet<Product> TaxPoc2Products { get; set; }
+        public DbSet<Invoice> TaxPoc2Invoices { get; set; }
+        public DbSet<BankAccount> TaxPoc2BankAccounts { get; set; }
+        public DbSet<BankMovement> TaxPoc2BankMovements { get; set; }
+        public DbSet<ProductCatalogue> TaxPoc2ProductCatalogues { get; set; }
+        public DbSet<PurchaseCatalogue> TaxPoc2PurchaseCatalogues { get; set; }
+        public DbSet<Customer> TaxPoc2Customers { get; set; }
 
         public DbSet<BlockChainAccount> BlockChainAccounts { get; set; }
         public DbSet<BlockChainServer> BlockChainServers { get; set; }

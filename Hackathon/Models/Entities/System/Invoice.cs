@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2Invoice
+    public class Invoice
     {
         [Key]
         public long Index { get; set; }
@@ -22,7 +22,7 @@ namespace Hackathon.Models
 
         [ForeignKey("IssuerCompany")]
         public long? IssuerCompanyIndex { get; set; }
-        public virtual TaxPoc2Company IssuerCompany { get; set; }
+        public virtual Company IssuerCompany { get; set; }
 
 
         [Display(Name = "Invoice Number")]
@@ -58,7 +58,7 @@ namespace Hackathon.Models
 
         [ForeignKey("Product")]
         public long? ProductIndex { get; set; }
-        public virtual TaxPoc2Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
 
         [Display(Name = "Customer Name")]
@@ -74,7 +74,7 @@ namespace Hackathon.Models
 
         [ForeignKey("CustomerCompany")]
         public long? CustomerCompanyIndex { get; set; }
-        public virtual TaxPoc2Company CustomerCompany { get; set; }
+        public virtual Company CustomerCompany { get; set; }
 
         [Display(Name = "Invoice Value")]
         public decimal? InvoiceValue { get; set; }

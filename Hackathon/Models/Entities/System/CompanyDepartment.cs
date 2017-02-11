@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2CompanyDepartment
+    public class CompanyDepartment
     {
         [Key]
         public long Index { get; set; }
@@ -21,7 +21,7 @@ namespace Hackathon.Models
         [Display(Name = "Company")]
         [ForeignKey("Company")]
         public long? CompanyIndex { get; set; }
-        public virtual TaxPoc2Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
     }
 }

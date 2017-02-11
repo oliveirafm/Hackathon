@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2Company
+    public class Company
     {
         [Key]
         public int Index { get; set; }
@@ -83,11 +83,11 @@ namespace Hackathon.Models
         [Display(Name = "Blockchain Address")]
         public string CompanyBlockChainAddress { get; set; }
 
-        public ICollection<TaxPoc2Customer> Customers { get; set; } = new HashSet<TaxPoc2Customer>();
-        public ICollection<TaxPoc2Invoice> Invoices { get; set; } = new HashSet<TaxPoc2Invoice>();
-        public ICollection<TaxPoc2BankMovement> BankMovements { get; set; } = new HashSet<TaxPoc2BankMovement>();
+        public ICollection<Customer> Customers { get; set; } = new HashSet<Customer>();
+        public ICollection<Invoice> Invoices { get; set; } = new HashSet<Invoice>();
+        public ICollection<BankMovement> BankMovements { get; set; } = new HashSet<BankMovement>();
 
-        public ICollection<TaxPoc2CompanyDepartment> CompanyDepartments { get; set; } = new HashSet<TaxPoc2CompanyDepartment>();
+        public ICollection<CompanyDepartment> CompanyDepartments { get; set; } = new HashSet<CompanyDepartment>();
 
         #region hackathon
 

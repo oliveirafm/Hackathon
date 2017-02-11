@@ -5,19 +5,19 @@ using System.Web;
 
 namespace Hackathon.Models
 {
-    public class Company : TaxPoc2Company 
+    public class Company : Company 
     {
     }
 
-    public class CompanyDepartment : TaxPoc2CompanyDepartment 
+    public class CompanyDepartment : CompanyDepartment 
     {
     }
 
-    public class BankAccount : TaxPoc2BankAccount
+    public class BankAccount : BankAccount
     {
     }
 
-    public class BankMovement : TaxPoc2BankMovement
+    public class BankMovement : BankMovement
     {
     }
 }

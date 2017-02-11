@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2BankMovement
+    public class BankMovement
     {
         [Key]
         public long Index { get; set; }
 
         [ForeignKey("Company")]
         public long? CompanyIndex { get; set; }
-        public virtual TaxPoc2Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         [Display(Name = "Date")]
         public DateTime TransactionDate { get; set; }

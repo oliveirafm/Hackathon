@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2BankAccount
+    public class BankAccount
     {
         [Key]
         public long Index { get; set; }
 
         [ForeignKey("Company")]
         public long? CompanyIndex { get; set; }
-        public virtual TaxPoc2Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         [Display(Name = "Account Company")]
         public string OwnerCompanyName { get; set; }

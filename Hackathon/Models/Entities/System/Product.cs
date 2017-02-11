@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2Product
+    public class Product
     {
         [Key]
         public long Index { get; set; }
@@ -17,8 +17,8 @@ namespace Hackathon.Models
         [Display(Name = "Product VAT%")]
         public int? VatPercentage { get; set; }
 
-        public ICollection<TaxPoc2ProductCatalogue> ProductCatalogues { get; set; } = new HashSet<TaxPoc2ProductCatalogue>();
-        public ICollection<TaxPoc2Invoice> Invoices { get; set; } = new HashSet<TaxPoc2Invoice>();
+        public ICollection<ProductCatalogue> ProductCatalogues { get; set; } = new HashSet<ProductCatalogue>();
+        public ICollection<Invoice> Invoices { get; set; } = new HashSet<Invoice>();
 
     }
 }

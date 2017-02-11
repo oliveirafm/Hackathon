@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hackathon.Models
 {
-    public class TaxPoc2Customer
+    public class Customer
     {
         [Key]
         public long Index { get; set; }
@@ -12,12 +12,12 @@ namespace Hackathon.Models
         [Display(Name = "Company")]
         [ForeignKey("Company")]
         public long CompanyIndex { get; set; }
-        public virtual TaxPoc2Company Company { get; set; }
+        public virtual Company Company { get; set; }
 
         [Display(Name = "Customer")]
         [ForeignKey("CustomerCompany")]
         public long? CustomerCompanyIndex { get; set; }
-        public virtual TaxPoc2Company CustomerCompany { get; set; }
+        public virtual Company CustomerCompany { get; set; }
 
 
 
