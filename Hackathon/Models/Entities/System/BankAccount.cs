@@ -23,5 +23,13 @@ namespace Hackathon.Models
 
         public string OwnerBlockChainAddress { get; set; }
 
+        public double? currentYearPensionRetained { get; set; }
+
+        public double? accumulatedPensionSavings { get; set; }
+        
+        public double? currentYearTaxRetained { get; set; }
+           
+        public double? currentYearRentingRetained { get; set; }
+         
     }
 }

@@ -26,6 +26,11 @@ namespace Hackathon.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.BankAccounts.AddOrUpdate(
+                p => p.BankAccountId,
+                new Models.BankAccount { AccountBalance = 200, currentYearPensionRetained=100, currentYearTaxRetained=10, currentYearRentingRetained = 5}
+                );
         }
     }
 }

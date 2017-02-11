@@ -178,6 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\BankAccountsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Emuns\Emuns.cs" />
@@ -191,6 +192,10 @@
     <Compile Include="Migrations\201702111404172_fix_initial_migration_.cs" />
     <Compile Include="Migrations\201702111404172_fix_initial_migration_.Designer.cs">
       <DependentUpon>201702111404172_fix_initial_migration_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702111422027_bankaccount_extra.cs" />
+    <Compile Include="Migrations\201702111422027_bankaccount_extra.Designer.cs">
+      <DependentUpon>201702111422027_bankaccount_extra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -296,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702111404172_fix_initial_migration_.resx">
       <DependentUpon>201702111404172_fix_initial_migration_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702111422027_bankaccount_extra.resx">
+      <DependentUpon>201702111422027_bankaccount_extra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
