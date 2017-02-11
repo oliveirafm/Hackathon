@@ -1,4 +1,4 @@
-﻿namespace Lab15.Models
+﻿namespace Hackathon.Models
 {
     /// <summary>
     /// 

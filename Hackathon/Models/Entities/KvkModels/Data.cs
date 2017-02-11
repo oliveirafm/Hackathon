@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lab15.Models
+namespace Hackathon.Models
 {
     public class Data
     {

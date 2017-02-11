@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Lab15.Models
+namespace Hackathon.Models
 {
     public class TaxPoc2CompanyDepartment
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using WebApplication1.Models;
 
-namespace Lab15.Models
+namespace Hackathon.Models
 {
     public class Item
     {
