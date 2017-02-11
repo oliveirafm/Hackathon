@@ -197,21 +197,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702111307373_Initial_migration.cs" />
-    <Compile Include="Migrations\201702111307373_Initial_migration.Designer.cs">
-      <DependentUpon>201702111307373_Initial_migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702111404172_fix_initial_migration_.cs" />
-    <Compile Include="Migrations\201702111404172_fix_initial_migration_.Designer.cs">
-      <DependentUpon>201702111404172_fix_initial_migration_.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702111422027_bankaccount_extra.cs" />
-    <Compile Include="Migrations\201702111422027_bankaccount_extra.Designer.cs">
-      <DependentUpon>201702111422027_bankaccount_extra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702111633562_Added_First_table_revision.cs" />
-    <Compile Include="Migrations\201702111633562_Added_First_table_revision.Designer.cs">
-      <DependentUpon>201702111633562_Added_First_table_revision.cs</DependentUpon>
+    <Compile Include="Migrations\201702111647318_Initial_migration.cs" />
+    <Compile Include="Migrations\201702111647318_Initial_migration.Designer.cs">
+      <DependentUpon>201702111647318_Initial_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -373,17 +361,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702111307373_Initial_migration.resx">
-      <DependentUpon>201702111307373_Initial_migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702111404172_fix_initial_migration_.resx">
-      <DependentUpon>201702111404172_fix_initial_migration_.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702111422027_bankaccount_extra.resx">
-      <DependentUpon>201702111422027_bankaccount_extra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702111633562_Added_First_table_revision.resx">
-      <DependentUpon>201702111633562_Added_First_table_revision.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702111647318_Initial_migration.resx">
+      <DependentUpon>201702111647318_Initial_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

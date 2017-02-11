@@ -7,13 +7,13 @@ namespace Hackathon.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Added_First_table_revision : IMigrationMetadata
+    public sealed partial class Initial_migration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Added_First_table_revision));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial_migration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201702111633562_Added_First_table_revision"; }
+            get { return "201702111647318_Initial_migration"; }
         }
         
         string IMigrationMetadata.Source
