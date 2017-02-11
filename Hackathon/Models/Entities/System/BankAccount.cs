@@ -8,6 +8,10 @@ namespace Hackathon.Models
         [Key]
         public int BankAccountId { get; set; }
 
+        [ForeignKey("ExchangeAccount")]
+        public int? ExchangeAccountId { get; set; }
+        public virtual ExchangeAccount ExchangeAccount { get; set; }
+
         [ForeignKey("Company")]
         public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
@@ -21,7 +25,6 @@ namespace Hackathon.Models
         [Display(Name = "Country of Activity")]
         public Country IssuerCompanyActivityCountry { get; set; }
 
-        public string OwnerBlockChainAddress { get; set; }
 
         public double? currentYearPensionRetained { get; set; }
 

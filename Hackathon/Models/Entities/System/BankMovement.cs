@@ -10,6 +10,10 @@ namespace Hackathon.Models
         [Key]
         public int BankMovementId { get; set; }
 
+        [ForeignKey("ExchangeAccount")]
+        public int? ExchangeAccountId { get; set; }
+        public virtual ExchangeAccount ExchangeAccount { get; set; }
+
         [ForeignKey("Company")]
         public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
@@ -22,17 +26,14 @@ namespace Hackathon.Models
         [Display(Name = "Deposit Source")]
         public String SourceDeposit { get; set; }
 
-        public int? SourceDepositId { get; set; }
+        public string SourceDepositRef { get; set; }
 
         [Display(Name = "Withdrawal Amount")]
         public decimal? AmountWithdrawal { get; set; }
         [Display(Name = "Withdrawal Source")]
         public String DestinationWithdrawal { get; set; }
 
-        public int? DestinationWithdrawalId { get; set; }
-
-        [Display(Name = "Is VAT")]
-        public bool isTaxationTransaction { get; set; }
+        public string DestinationWithdrawalRef { get; set; }
 
     }
 }
