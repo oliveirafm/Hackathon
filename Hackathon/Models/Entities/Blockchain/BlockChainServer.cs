@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Lab15.Models
+namespace Hackathon.Models
 {
     public class BlockChainServer
     {

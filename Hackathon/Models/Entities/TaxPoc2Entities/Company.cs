@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 
-namespace Lab15.Models
+namespace Hackathon.Models
 {
     public class TaxPoc2Company
     {
