@@ -233,6 +233,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SmartContracts\InvoiceControl_v2.sol" />
+    <Content Include="App_Data\SmartContracts\InvoiceControl.sol" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -349,9 +351,7 @@
     <Content Include="Views\TblInvoicePaymentDivisions\Edit.cshtml" />
     <Content Include="Views\TblInvoicePaymentDivisions\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
