@@ -1,5 +1,9 @@
 exclude:
+- /Hackathon/Controllers/CRUDs/.*
+- /Hackathon/Global.asax.cs
+- /Hackathon/Migrations/.*
 - /Hackathon/Scripts/.*
+- /Hackathon/Startup.cs
 component_depth: 1
 languages:
 - csharp
