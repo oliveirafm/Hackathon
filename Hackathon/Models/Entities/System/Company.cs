@@ -94,6 +94,7 @@ namespace Hackathon.Models
 
         public ICollection<BankAccount> BankAccounts { get; set; } = new HashSet<BankAccount>();
 
+public ICollection<DiversificationPlan> DiversificationPlan { get; set; } = new HashSet<DiversificationPlan>();
 
     }
 }

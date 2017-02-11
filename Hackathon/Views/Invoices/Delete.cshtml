@@ -1,0 +1,176 @@
+﻿@model Hackathon.Models.Invoice
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExchangeAccount.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExchangeAccount.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuerCompany.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssuerCompany.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuerVatNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssuerVatNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueDateTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssueDateTimestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDateTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDateTimestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentServiceHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentServiceHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductVatPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductVatPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductVatValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductVatValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerVatNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerVatNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceVatValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceVatValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceVatPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceVatPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceStatus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

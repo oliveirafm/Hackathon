@@ -1,0 +1,183 @@
+﻿@model IEnumerable<Hackathon.Models.Company>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VatNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyActivityCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyActivity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanySector)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KvkNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rsin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SbiCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SbiCodeDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BagId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseNumberAddition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPSLatitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPSLongitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RijksdriehoekX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RijksdriehoekY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RijksdriehoekZ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyBlockChainAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IBAN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VatNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyActivityCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyActivity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanySector)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KvkNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BranchNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rsin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusinessName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SbiCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SbiCodeDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BagId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseNumberAddition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GPSLatitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GPSLongitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RijksdriehoekX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RijksdriehoekY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RijksdriehoekZ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyBlockChainAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IBAN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompanyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CompanyId })
+        </td>
+    </tr>
+}
+
+</table>
