@@ -16,31 +16,33 @@ namespace Hackathon.Models
         public virtual ExchangeAccount ExchangeAccount { get; set; }
 
 
-        [Display(Name = "Issuer VAT Number")]
+        [Display(Name = "VAT Number")]
         public int? IssuerVatNumber { get; set; }
 
         [ForeignKey("IssuerCompany")]
-        [Display(Name = "Issuer Company")]
+        [Display(Name = "Company")]
         public int? IssuerCompanyId { get; set; }
         public virtual Company IssuerCompany { get; set; }
 
 
-        [Display(Name = "Invoice Issue Date")]
+        
         public int? IssueDateTimestamp { get; set; }
+        [Display(Name = "Issue Date")]
         public DateTime? IssueDate { get; set; }
 
-        [Display(Name = "Invoice Due Date")]
+   
         public int? DueDateTimestamp { get; set; }
+        [Display(Name = "Due Date")]
         public DateTime? DueDate { get; set; }
 
 
-        [Display(Name = "Payment Service")]
+        [Display(Name = "Product / Service"), Required]
         public string PaymentService { get; set; }
 
-        [Display(Name = "Payment Value")]
+        [Display(Name = "Price"), Required]
         public decimal? PaymentValue { get; set; }
 
-        [Display(Name = "Payment Service Hours")]
+        [Display(Name = "Hours")]
         public decimal? PaymentServiceHours{ get; set; }
 
         [Display(Name = "VAT%")]
@@ -60,13 +62,13 @@ namespace Hackathon.Models
         public int? CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
-        [Display(Name = "Invoice Value")]
+        [Display(Name = "Total Price")]
         public decimal? InvoiceValue { get; set; }
-        [Display(Name = "Invoice VAT Value")]
+        [Display(Name = "VAT Value")]
         public decimal? InvoiceVatValue { get; set; }
-        [Display(Name = "Invoice VAT%")]
+        [Display(Name = "VAT%")]
         public int? InvoiceVatPercentage { get; set; }
-        [Display(Name = "Invoice Status")]
+        [Display(Name = "Status")]
         public InvoiceStatus InvoiceStatus { get; set; }
 
 

@@ -10,9 +10,9 @@ using Hackathon.Models;
 
 namespace Hackathon.Controllers
 {
-    public class InvoicesController : Controller
+    public class InvoicesController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         // GET: Invoices
         public ActionResult Index()
@@ -42,7 +42,18 @@ namespace Hackathon.Controllers
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "CustomerName");
             ViewBag.ExchangeAccountId = new SelectList(db.ExchangeAccounts, "ExchangeAccountId", "UserId");
             ViewBag.IssuerCompanyId = new SelectList(db.Companies, "CompanyId", "CompanyName");
-            return View();
+            
+
+            var invoice = new Invoice();
+            invoice.IssuerVatNumber = currentExchangeAccount.Company.VatNumber;
+            invoice.IssuerCompany = currentExchangeAccount.Company;
+            invoice.IssuerCompanyId = currentExchangeAccount.CompanyId;
+            invoice.IssueDate = DateTime.Now;
+            invoice.DueDate = DateTime.Now.AddMonths(1);
+            invoice.ProductVatPercentage = 21;
+
+
+            return View(invoice);
         }
 
         // POST: Invoices/Create
@@ -136,5 +147,19 @@ namespace Hackathon.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpGet]
+        public ActionResult UpdateCustomerVatNumber(int? id)
+        {
+
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                var customer = db.Customers.Where(w => w.CustomerId == id).FirstOrDefault();
+                return Json(customer, JsonRequestBehavior.AllowGet);
+            }
+            return View();
+        }
     }
+
+
 }

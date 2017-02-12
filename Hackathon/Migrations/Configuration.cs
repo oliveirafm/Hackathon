@@ -10,6 +10,7 @@ namespace Hackathon.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Hackathon.Models.ApplicationDbContext context)
@@ -29,8 +30,8 @@ namespace Hackathon.Migrations
 
             context.Customers.AddOrUpdate(
                 p => p.CustomerId,
-                new Models.Customer { CustomerName = "Lab 15", CustomerVatNumber = 11111111 },
-                new Models.Customer { CustomerName = "Six Factor", CustomerVatNumber = 513667601 }
+                new Models.Customer { CustomerName = "Lab 15", CustomerVatNumber = 11111111, CustomerEmail="filipe@six-factor.com" },
+                new Models.Customer { CustomerName = "Six Factor", CustomerVatNumber = 513667601, CustomerEmail = "ivo@six-factor.com" }
                 );
 
         }

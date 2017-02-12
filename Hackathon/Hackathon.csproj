@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201702111647318_Initial_migration.Designer.cs">
       <DependentUpon>201702111647318_Initial_migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702120310094_customer_email.cs" />
+    <Compile Include="Migrations\201702120310094_customer_email.Designer.cs">
+      <DependentUpon>201702120310094_customer_email.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Entities\Blockchain\BlockChainAccount.cs" />
@@ -421,6 +425,8 @@
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Overview\Index.cshtml" />
     <Content Include="Views\ToPay\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPaymentGateWay.cshtml" />
+    <Content Include="Views\ToPay\Index - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ExchangeOverView\" />
@@ -436,6 +442,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702111647318_Initial_migration.resx">
       <DependentUpon>201702111647318_Initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702120310094_customer_email.resx">
+      <DependentUpon>201702120310094_customer_email.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

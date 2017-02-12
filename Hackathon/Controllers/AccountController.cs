@@ -81,7 +81,15 @@ namespace Hackathon.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    var customer = db.Customers.Where(d => d.CustomerEmail == model.Email).FirstOrDefault();
+                    if (customer != null)
+                    {
+                        return RedirectToAction("", "ToPay");
+                    }
+                    else
+                    {
+                        return RedirectToLocal(returnUrl);
+                    }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

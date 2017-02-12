@@ -58,8 +58,8 @@ namespace Hackathon.Controllers
         {
 
             //var diversificationPlanItems = db.DiversificationPlanItems.Include(d => d.ContractedServiceConfiguration).Include(d => d.DiversificationPlan).Include(d => d.ExchangeService).Where(p=> p. );
-            DiversificationPlan diversificationPlan = (DiversificationPlan)db.DiversificationPlans.Where(p => p.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault();
-            return View(diversificationPlan.Itens.ToList());
+            DiversificationPlan d = (DiversificationPlan)db.DiversificationPlans.Include(dx => dx.Itens).Where(p => p.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault();
+            return View(d.Itens.ToList());
         }
 
 
@@ -67,7 +67,7 @@ namespace Hackathon.Controllers
         public ActionResult Create()
         {
             ViewBag.ContractedServiceConfigurationId = new SelectList(db.ContractedServiceConfigurations, "ContractedServiceConfigurationId", "ExchangeServiceParameter1");
-            ViewBag.DiversificationPlanId = 1; //new SelectList(db.DiversificationPlans, "DiversificationPlanId", "Observations");
+            ViewBag.DiversificationPlanId = ((DiversificationPlan)db.DiversificationPlans.Where(p => p.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault()).DiversificationPlanId;
             ViewBag.ExchangeServiceId = new SelectList(db.ExchangeServices, "ExchangeServiceId", "ExchangeServiceName");
             
             return View();
@@ -82,13 +82,14 @@ namespace Hackathon.Controllers
         {
             if (ModelState.IsValid)
             {
+                diversificationPlanItem.DiversificationPlan = ((DiversificationPlan)db.DiversificationPlans.Where(p => p.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault());
+                diversificationPlanItem.DiversificationPlanId = diversificationPlanItem.DiversificationPlan.DiversificationPlanId;
                 db.DiversificationPlanItems.Add(diversificationPlanItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.ContractedServiceConfigurationId = new SelectList(db.ContractedServiceConfigurations, "ContractedServiceConfigurationId", "ExchangeServiceParameter1", diversificationPlanItem.ContractedServiceConfigurationId);
-            ViewBag.DiversificationPlanId = new SelectList(db.DiversificationPlans, "DiversificationPlanId", "Observations", diversificationPlanItem.DiversificationPlanId);
             ViewBag.ExchangeServiceId = new SelectList(db.ExchangeServices, "ExchangeServiceId", "ExchangeServiceName", diversificationPlanItem.ExchangeServiceId);
             return View(diversificationPlanItem);
         }
