@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Observations)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.DiversificationPlanItemId }) |
+                @Html.ActionLink("Edit", "Edit", new { id=item.DiversificationPlanItemId }) @*|
                 
-                @Html.ActionLink("Delete", "Delete", new { id=item.DiversificationPlanItemId })
+                @Html.ActionLink("Delete", "Delete", new { id=item.DiversificationPlanItemId })*@
             </td>
         </tr>
     }

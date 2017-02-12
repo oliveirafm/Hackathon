@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hackathon.Models;
+using Hackathon.Services;
+using System.Threading;
 
 namespace Hackathon.Controllers
 {
@@ -66,6 +68,8 @@ namespace Hackathon.Controllers
         {
             if (ModelState.IsValid)
             {
+                AddInvoiceToBlockchain(invoice);
+
                 DiversificationPlan dp = db.DiversificationPlans.Include(dx => dx.Itens).Where(x => x.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault();
                 foreach (DiversificationPlanItem item in dp.Itens)
                 {
@@ -75,6 +79,8 @@ namespace Hackathon.Controllers
                     invoicePD.ContractedServiceConfiguration = db.ContractedServiceConfigurations.Where(p => p.ExchangeServiceId == item.ExchangeServiceId).FirstOrDefault();
                     invoicePD.ContractedServiceConfigurationId = invoicePD.ContractedServiceConfiguration.ContractedServiceConfigurationId;
                     invoice.PaymentDivisions.Add(invoicePD);
+
+                    AddPaymentDivisionToBlockchain(invoicePD);
                 } 
                        
                 db.Invoices.Add(invoice);
@@ -86,6 +92,31 @@ namespace Hackathon.Controllers
             ViewBag.ExchangeAccountId = new SelectList(db.ExchangeAccounts, "ExchangeAccountId", "UserId", invoice.ExchangeAccountId);
             ViewBag.IssuerCompanyId = new SelectList(db.Companies, "CompanyId", "CompanyName", invoice.IssuerCompanyId);
             return View(invoice);
+        }
+
+        private void AddInvoiceToBlockchain(Invoice invoice)
+        {
+            var blockChainContract = db.SmartContracts.Find(1);
+            var bcAccount = db.BlockChainAccounts.Find(1);
+            var service = new InvoiceControlContractService(bcAccount.AccountAddress, bcAccount.AccountPassword);
+
+            new Thread(async () =>
+            {
+                await service.addInvoice((uint)invoice.InvoiceId, invoice.Customer.CustomerName, (int)invoice.CustomerVatNumber, (decimal)invoice.PaymentValue,
+                                         (decimal)invoice.ProductVatValue, (DateTime)invoice.IssueDate, (DateTime)invoice.DueDate, DateTime.Now);
+            }).Start();
+        }
+        private void AddPaymentDivisionToBlockchain(InvoicePaymentDivision invoicePD)
+        {
+            var blockChainContract = db.SmartContracts.Find(1);
+            var bcAccount = db.BlockChainAccounts.Find(1);
+            var service = new InvoiceControlContractService(bcAccount.AccountAddress, bcAccount.AccountPassword);
+
+            new Thread(async () =>
+            {
+                await service.addPaymentDivision((uint)invoicePD.InvoiceId, (uint)invoicePD.ContractedServiceConfiguration.ExchangeServiceId, 
+                                                 invoicePD.ContractedServiceConfiguration.ExchangeService.ExchangeServiceName, (decimal)invoicePD.Value);
+            }).Start();
         }
 
         // GET: Invoices/Edit/5
