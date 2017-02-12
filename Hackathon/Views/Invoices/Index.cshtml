@@ -39,14 +39,15 @@
             @Html.DisplayFor(modelItem => item.Customer.CustomerName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CustomerVatNumber)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.IssueDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DueDate)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerVatNumber)
-        </td>
+     
         <td>
             @Html.DisplayFor(modelItem => item.InvoiceValue)
         </td>
