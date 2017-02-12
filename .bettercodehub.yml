@@ -2,6 +2,9 @@ exclude:
 - /Hackathon/Controllers/CRUDs/.*
 - /Hackathon/Global.asax.cs
 - /Hackathon/Migrations/.*
+- /Hackathon/Models/ViewModels/AccountViewModels.cs
+- /Hackathon/Models/ViewModels/ChamberOfCommerceViewModel.cs
+- /Hackathon/Models/ViewModels/ManageViewModels.cs
 - /Hackathon/Scripts/.*
 - /Hackathon/Startup.cs
 component_depth: 1
