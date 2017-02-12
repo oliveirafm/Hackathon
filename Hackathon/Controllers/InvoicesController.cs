@@ -19,7 +19,7 @@ namespace Hackathon.Controllers
         // GET: Invoices
         public ActionResult Index()
         {
-            var invoices = db.Invoices.Include(i => i.Customer).Include(i => i.ExchangeAccount).Include(i => i.IssuerCompany);
+            var invoices = db.Invoices.Include(i => i.Customer).Include(i => i.ExchangeAccount).Include(i => i.IssuerCompany).Where(p => p.IssuerCompanyId == currentExchangeAccount.CompanyId);
             return View(invoices.ToList());
         }
 
