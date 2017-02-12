@@ -10,7 +10,7 @@ namespace Hackathon.Services
     public class AccountService : BaseService
     {
 
-        public string passPhrase = "ThE~Bl0ckch@in-P@ssW0rd";
+        //public string passPhrase = "ThE~Bl0ckch@in-P@ssW0rd";
 
 
         public AccountService()
