@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Hackathon.Models.SmartContract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BlockChainDeployAccount.AccountName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractByteCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractAbi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractOwnerAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlockChainDeployAccount.AccountName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractByteCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractAbi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractOwnerAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SmartContractId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SmartContractId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SmartContractId })
+        </td>
+    </tr>
+}
+
+</table>

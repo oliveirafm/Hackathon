@@ -223,6 +223,7 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\CRUDs\TblBankAccountsController.cs" />
     <Compile Include="Controllers\CRUDs\TblBankMovementsController.cs" />
+    <Compile Include="Controllers\CRUDs\TblBlockChainAccountsController.cs" />
     <Compile Include="Controllers\CRUDs\TblCompaniesController.cs" />
     <Compile Include="Controllers\CRUDs\TblContractedServiceConfigurations1Controller.cs" />
     <Compile Include="Controllers\CRUDs\TblCustomersController.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Controllers\CRUDs\TblExchangeServicesController.cs" />
     <Compile Include="Controllers\CRUDs\TblInvoicePaymentDivisionsController.cs" />
     <Compile Include="Controllers\CRUDs\TblInvoicesController.cs" />
+    <Compile Include="Controllers\CRUDs\TblSmartContractsController.cs" />
     <Compile Include="Controllers\DiversificationPlanController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\ExchangeOverViewController.cs" />
@@ -244,6 +246,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Migrations\201702111647318_Initial_migration.cs" />
     <Compile Include="Migrations\201702111647318_Initial_migration.Designer.cs">
       <DependentUpon>201702111647318_Initial_migration.cs</DependentUpon>
@@ -288,15 +291,57 @@
   <ItemGroup>
     <Content Include="App_Data\SmartContracts\InvoiceControl_v2.sol" />
     <Content Include="App_Data\SmartContracts\InvoiceControl.sol" />
+    <Content Include="Content\AdminLTE.css" />
+    <Content Include="Content\AdminLTE.min.css" />
+    <Content Include="Content\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\alt\AdminLTE-select2.css" />
+    <Content Include="Content\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dummyOverview.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\skins\skin-black-light.css" />
+    <Content Include="Content\skins\skin-black-light.min.css" />
+    <Content Include="Content\skins\skin-black.css" />
+    <Content Include="Content\skins\skin-black.min.css" />
+    <Content Include="Content\skins\skin-blue-light.css" />
+    <Content Include="Content\skins\skin-blue-light.min.css" />
+    <Content Include="Content\skins\skin-blue.css" />
+    <Content Include="Content\skins\skin-blue.min.css" />
+    <Content Include="Content\skins\skin-green-light.css" />
+    <Content Include="Content\skins\skin-green-light.min.css" />
+    <Content Include="Content\skins\skin-green.css" />
+    <Content Include="Content\skins\skin-green.min.css" />
+    <Content Include="Content\skins\skin-purple-light.css" />
+    <Content Include="Content\skins\skin-purple-light.min.css" />
+    <Content Include="Content\skins\skin-purple.css" />
+    <Content Include="Content\skins\skin-purple.min.css" />
+    <Content Include="Content\skins\skin-red-light.css" />
+    <Content Include="Content\skins\skin-red-light.min.css" />
+    <Content Include="Content\skins\skin-red.css" />
+    <Content Include="Content\skins\skin-red.min.css" />
+    <Content Include="Content\skins\skin-yellow-light.css" />
+    <Content Include="Content\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\skins\skin-yellow.css" />
+    <Content Include="Content\skins\skin-yellow.min.css" />
+    <Content Include="Content\skins\_all-skins.css" />
+    <Content Include="Content\skins\_all-skins.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\Lab15Hackathon - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -421,6 +466,16 @@
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Overview\Index.cshtml" />
     <Content Include="Views\ToPay\Index.cshtml" />
+    <Content Include="Views\TblBlockChainAccounts\Create.cshtml" />
+    <Content Include="Views\TblBlockChainAccounts\Delete.cshtml" />
+    <Content Include="Views\TblBlockChainAccounts\Details.cshtml" />
+    <Content Include="Views\TblBlockChainAccounts\Edit.cshtml" />
+    <Content Include="Views\TblBlockChainAccounts\Index.cshtml" />
+    <Content Include="Views\TblSmartContracts\Create.cshtml" />
+    <Content Include="Views\TblSmartContracts\Delete.cshtml" />
+    <Content Include="Views\TblSmartContracts\Details.cshtml" />
+    <Content Include="Views\TblSmartContracts\Edit.cshtml" />
+    <Content Include="Views\TblSmartContracts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ExchangeOverView\" />

@@ -9,20 +9,20 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="skin-blue navbar navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <div class="skin-blue navbar-header">
+                <button type="button" class="skin-blue navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Fl!P", "", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="skin-blue navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated && Html.IsEnrolled())
                     {
                         <li>@Html.ActionLink("Company", "Edit", "Company") </li>
                         <li>@Html.ActionLink("Diversification Plan", "Index", "DiversificationPlan") </li>
@@ -39,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Team Six Factor </p>
         </footer>
     </div>
 

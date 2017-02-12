@@ -25,6 +25,8 @@ namespace Hackathon
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/AdminLTE.css",
+                      "~/Content/skins/skin-blue.css",
                       "~/Content/site.css"));
         }
     }
