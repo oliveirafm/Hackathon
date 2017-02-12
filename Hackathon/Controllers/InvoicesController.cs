@@ -45,6 +45,7 @@ namespace Hackathon.Controllers
             
 
             var invoice = new Invoice();
+            invoice.ExchangeAccountId = currentExchangeAccount.ExchangeAccountId;
             invoice.IssuerVatNumber = currentExchangeAccount.Company.VatNumber;
             invoice.IssuerCompany = currentExchangeAccount.Company;
             invoice.IssuerCompanyId = currentExchangeAccount.CompanyId;
@@ -65,7 +66,8 @@ namespace Hackathon.Controllers
         {
             if (ModelState.IsValid)
             {
-                foreach (DiversificationPlanItem item in currentExchangeAccount.Company.DiversificationPlan.FirstOrDefault().Itens)
+                DiversificationPlan dp = db.DiversificationPlans.Include(dx => dx.Itens).Where(x => x.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault();
+                foreach (DiversificationPlanItem item in dp.Itens)
                 {
                     InvoicePaymentDivision invoicePD = new InvoicePaymentDivision();
                     invoicePD.Invoice = invoice;

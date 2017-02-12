@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace Hackathon.Controllers
 {
@@ -21,7 +22,10 @@ namespace Hackathon.Controllers
             var userAccountId = exchangeAccount.UserId;
             if (exchangeAccount.Company!=null)
             {
-                return View();
+                var exchangeAccountMovements = db.ExchangeAccountMovements.Include(e => e.Company).Include(e => e.ContractedServiceConfiguration).Include(e => e.DiversificationPlanItem).Include(e => e.ExchangeAccount).Include(e => e.ExchangeService).Include(e => e.SourceInvoice);
+                return View(exchangeAccountMovements.ToList());
+
+                
             }
             else
             {

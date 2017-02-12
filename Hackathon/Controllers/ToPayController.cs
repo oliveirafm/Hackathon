@@ -34,9 +34,15 @@ namespace Hackathon.Controllers
             {
                 return HttpNotFound();
             }
+
+
             invoice.InvoiceStatus = InvoiceStatus.Paid;
 
             db.SaveChanges();
+
+            Services.ExchangeService ec = new Services.ExchangeService();
+            ec.processPayment(invoice.InvoiceId,(double)invoice.InvoiceValue);
+
             return RedirectToAction("Index");
         }
 
