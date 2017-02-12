@@ -240,6 +240,7 @@
     <Compile Include="Controllers\ExchangeOverViewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\IosController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ToPayController.cs" />
     <Compile Include="Emuns\Emuns.cs" />
@@ -282,6 +283,7 @@
     <Compile Include="Models\Entities\System\InvoicePaymentDivision.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ViewModels\ChamberOfCommerceViewModel.cs" />
+    <Compile Include="Models\ViewModels\CurrentAccountViewModel.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\ToPayViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -483,6 +485,7 @@
     <Content Include="Views\TblSmartContracts\Details.cshtml" />
     <Content Include="Views\TblSmartContracts\Edit.cshtml" />
     <Content Include="Views\TblSmartContracts\Index.cshtml" />
+    <Content Include="Views\Ios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ExchangeOverView\" />
