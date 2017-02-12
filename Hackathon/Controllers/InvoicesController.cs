@@ -65,6 +65,16 @@ namespace Hackathon.Controllers
         {
             if (ModelState.IsValid)
             {
+                foreach (DiversificationPlanItem item in currentExchangeAccount.Company.DiversificationPlan.FirstOrDefault().Itens)
+                {
+                    InvoicePaymentDivision invoicePD = new InvoicePaymentDivision();
+                    invoicePD.Invoice = invoice;
+                    invoicePD.Value = (double)invoice.PaymentValue * item.Value / 100;
+                    invoicePD.ContractedServiceConfiguration = db.ContractedServiceConfigurations.Where(p => p.ExchangeServiceId == item.ExchangeServiceId).FirstOrDefault();
+                    invoicePD.ContractedServiceConfigurationId = invoicePD.ContractedServiceConfiguration.ContractedServiceConfigurationId;
+                    invoice.PaymentDivisions.Add(invoicePD);
+                } 
+                       
                 db.Invoices.Add(invoice);
                 db.SaveChanges();
                 return RedirectToAction("Index");
