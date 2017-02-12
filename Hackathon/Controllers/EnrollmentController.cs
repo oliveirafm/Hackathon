@@ -25,7 +25,7 @@ namespace Hackathon.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async System.Threading.Tasks.Task<ActionResult> Index([Bind(Include = "CompanyId,CompanyName,VatNumber,CompanyActivityCountry,CompanyActivity,CompanySector,KvkNumber,BranchNumber,Rsin,BusinessName,SbiCode,SbiCodeDescription,AddressType,BagId,Street,HouseNumber,HouseNumberAddition,PostalCode,City,CompanyCountry,GPSLatitude,GPSLongitude,RijksdriehoekX,RijksdriehoekY,RijksdriehoekZ,CompanyBlockChainAddress,IBAN")] Company company)
+        public ActionResult Index([Bind(Include = "CompanyId,CompanyName,VatNumber,CompanyActivityCountry,CompanyActivity,CompanySector,KvkNumber,BranchNumber,Rsin,BusinessName,SbiCode,SbiCodeDescription,AddressType,BagId,Street,HouseNumber,HouseNumberAddition,PostalCode,City,CompanyCountry,GPSLatitude,GPSLongitude,RijksdriehoekX,RijksdriehoekY,RijksdriehoekZ,CompanyBlockChainAddress,IBAN")] Company company)
         {
 
 
@@ -54,15 +54,15 @@ namespace Hackathon.Controllers
 
                 //var contractAddress = "";
 
-                //new Thread(async () =>
-                //{
+                new Thread(async () =>
+                {
+                    var contractAddress = await service.SendToServer(blockChainContract.ContractByteCode, blockChainContract.ContractAbi,
+                    InvoiceControlContractService.ConstructorValues(company.CompanyId, company.CompanyName, (int)company.VatNumber, company.KvkNumber, company.IBAN));
 
-                //}).Start();
-                var contractAddress = await service.SendToServer(blockChainContract.ContractByteCode, blockChainContract.ContractAbi,
-                InvoiceControlContractService.ConstructorValues(company.CompanyId, company.CompanyName, (int)company.VatNumber, company.KvkNumber, company.IBAN));
+                    company.CompanyBlockChainAddress = contractAddress.ToString();
+                    db.SaveChanges();
 
-                company.CompanyBlockChainAddress = contractAddress.ToString();
-                db.SaveChanges();
+                }).Start();
 
                 return RedirectToAction("", "Home");
             }
