@@ -1,10 +1,12 @@
-﻿using Hackathon.Models;
-using Hackathon.Models.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Hackathon.Models;
 
 namespace Hackathon.Controllers
 {
@@ -16,9 +18,29 @@ namespace Hackathon.Controllers
         // GET: ToPay
         public ActionResult Index()
         {
-            return View();
+            var invoices = db.Invoices.Include(i => i.Customer).Include(i => i.ExchangeAccount).Include(i => i.IssuerCompany).Where(i=> i.InvoiceStatus == InvoiceStatus.Sent);
+            return View(invoices.ToList());
         }
 
+        // GET: Invoices/Details/5
+        public ActionResult Pay(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Invoice invoice = db.Invoices.Find(id);
+            if (invoice == null)
+            {
+                return HttpNotFound();
+            }
+            invoice.InvoiceStatus = InvoiceStatus.Paid;
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        /*
         // POST: TblCompanies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -30,14 +52,6 @@ namespace Hackathon.Controllers
 
             if (ModelState.IsValid)
             {
-                /*
-                Company company = db.Companies.Where(w => w.IBAN == toPay.IBAN).FirstOrDefault();
-                if (company==null)
-                {
-                    return View();
-                }
-                */
-
                 Invoice invoice = db.Invoices.Where( k => k.Customer.Company.IBAN == toPay.IBAN 
                                             &&  k.InvoiceId.ToString() == toPay.InvoiceNumber 
                                             && toPay.Ammount == (k.InvoiceValue + k.InvoiceVatValue)).FirstOrDefault();
@@ -60,5 +74,6 @@ namespace Hackathon.Controllers
 
             return View(toPay);
         }
+*/
     }
 }

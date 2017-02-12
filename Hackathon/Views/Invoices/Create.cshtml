@@ -15,21 +15,24 @@
         <h4>Invoice</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => model.IssuerCompanyId)
+        <div class="form-group">
+            @Html.LabelFor(model => model.IssuerCompany.CompanyName, "Company", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IssuerCompany.CompanyName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.IssuerCompanyId, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.IssuerVatNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IssuerVatNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.IssuerVatNumber, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.IssuerVatNumber, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IssuerCompanyId, "IssuerCompanyId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("IssuerCompanyId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IssuerCompanyId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.IssueDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -75,7 +78,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProductVatPercentage, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductVatPercentage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ProductVatPercentage, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.ProductVatPercentage, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -83,7 +86,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProductVatValue, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductVatValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ProductVatValue, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.ProductVatValue, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -102,7 +105,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerVatNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerVatNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CustomerVatNumber, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.CustomerVatNumber, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -111,27 +114,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.InvoiceValue, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.InvoiceValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.InvoiceValue, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.InvoiceValue, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.InvoiceVatValue, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.InvoiceVatValue, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.InvoiceVatValue, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.InvoiceVatPercentage, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.InvoiceVatPercentage, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.InvoiceVatPercentage, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.InvoiceStatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -153,5 +139,30 @@
 </div>
 
 @section Scripts {
+
+    <script>
+
+    $(function () {
+        $('#CustomerId').on('change', function () {
+            $.getJSON('UpdateCustomerVatNumber/' + $('#CustomerId > option:selected').attr("value"), function (responseData) {
+                $('#CustomerVatNumber').val(responseData.CustomerVatNumber);
+               
+            });
+        });
+    });
+
+
+    $(function () {
+        $('#PaymentValue').on('change', function () {
+            $('#ProductVatValue').val($('#ProductVatPercentage').val() * $('#PaymentValue').val() / 100);
+            $('#InvoiceValue').val( parseInt($('#ProductVatValue').val()) + parseInt( $('#PaymentValue').val()) );
+
+        });
+    });
+
+    </script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+

@@ -23,5 +23,8 @@ namespace Hackathon.Models
         [Display(Name = "Customer VAT Number")]
         public int? CustomerVatNumber { get; set; }
 
+        [Display(Name = "Email")]
+        public string CustomerEmail { get; set; }
+
     }
 }
