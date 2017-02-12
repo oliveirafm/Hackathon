@@ -16,17 +16,16 @@ namespace Hackathon.Models
         public virtual DiversificationPlan DiversificationPlan { get; set; }
 
         
-        [Display(Name = "Value")]
+        [Display(Name = "Percentage")]
         public double Value { get; set; }
 
         [Display(Name = "Type")]
         public valueType Type { get; set; }
 
         [Display(Name = "Observations")]
-
         public string Observations { get; set; }
 
-
+     
         [ForeignKey("ExchangeService")]
         public int? ExchangeServiceId { get; set; }
         public virtual ExchangeService ExchangeService { get; set; }

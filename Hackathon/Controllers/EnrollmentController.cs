@@ -46,7 +46,7 @@ namespace Hackathon.Controllers
 
                 db.Companies.Add(company);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("", "Home");
             }
 
             return View(company);

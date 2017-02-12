@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Hackathon.Controllers
 {
-    public class DiversificationPlanController : Controller
+    public class DiversificationPlanController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -56,8 +56,10 @@ namespace Hackathon.Controllers
         // GET: TblDiversificationPlanItems
         public ActionResult Index()
         {
-            var diversificationPlanItems = db.DiversificationPlanItems.Include(d => d.ContractedServiceConfiguration).Include(d => d.DiversificationPlan).Include(d => d.ExchangeService);
-            return View(diversificationPlanItems.ToList());
+
+            //var diversificationPlanItems = db.DiversificationPlanItems.Include(d => d.ContractedServiceConfiguration).Include(d => d.DiversificationPlan).Include(d => d.ExchangeService).Where(p=> p. );
+            DiversificationPlan diversificationPlan = (DiversificationPlan)db.DiversificationPlans.Where(p => p.CompanyId == currentExchangeAccount.CompanyId).FirstOrDefault();
+            return View(diversificationPlan.Itens.ToList());
         }
 
 

@@ -12,7 +12,7 @@ namespace Hackathon.Models
         [Key]
         public int ExchangeServiceId { get; set; }
 
-        [Display(Name = "Service Name")]
+        [Display(Name = "Service")]
         public string ExchangeServiceName { get; set; }
 
         public bool AvailableInMarket { get; set; }

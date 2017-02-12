@@ -24,7 +24,7 @@
                   
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Company", "Edit/1", "Company") </li>
+                        <li>@Html.ActionLink("Company", "Edit", "Company") </li>
                         <li>@Html.ActionLink("Diversification Plan", "Index", "DiversificationPlan") </li>
                         <li>@Html.ActionLink("Invoices", "", "Invoices")</li>
                         <li>@Html.ActionLink("Simulate Payment", "Index", "ToPay")</li>

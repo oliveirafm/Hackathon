@@ -14,23 +14,25 @@ namespace Hackathon.Migrations
 
         protected override void Seed(Hackathon.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-
             context.BankAccounts.AddOrUpdate(
                 p => p.BankAccountId,
                 new Models.BankAccount { AccountBalance = 200, currentYearPensionRetained=100, currentYearTaxRetained=10, currentYearRentingRetained = 5}
                 );
+
+            context.ExchangeServices.AddOrUpdate(
+                p=> p.ExchangeServiceId,
+                new Models.ExchangeService { ExchangeServiceName = "Pension", AvailableInMarket=true},
+                new Models.ExchangeService { ExchangeServiceName = "Live Insurance", AvailableInMarket = true },
+                new Models.ExchangeService { ExchangeServiceName = "Renting (Auto)", AvailableInMarket = true },
+                new Models.ExchangeService { ExchangeServiceName = "Telecom", AvailableInMarket = true }
+                );
+
+            context.Customers.AddOrUpdate(
+                p => p.CustomerId,
+                new Models.Customer { CustomerName = "Lab 15", CustomerVatNumber = 11111111 },
+                new Models.Customer { CustomerName = "Six Factor", CustomerVatNumber = 513667601 }
+                );
+
         }
     }
 }

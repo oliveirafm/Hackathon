@@ -219,6 +219,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\BankAccountsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\CRUDs\TblBankAccountsController.cs" />
     <Compile Include="Controllers\CRUDs\TblBankMovementsController.cs" />
@@ -422,7 +423,6 @@
     <Content Include="Views\ToPay\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\ExchangeOverView\" />
   </ItemGroup>
   <ItemGroup>

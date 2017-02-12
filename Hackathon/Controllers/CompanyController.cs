@@ -7,12 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hackathon.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Hackathon.Controllers
 {
-    public class CompanyController : Controller
+    public class CompanyController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+       
 
         // GET: Company
         public ActionResult Index()
@@ -61,10 +62,8 @@ namespace Hackathon.Controllers
         // GET: Company/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
+            id = this.currentExchangeAccount.CompanyId;
             Company company = db.Companies.Find(id);
             if (company == null)
             {

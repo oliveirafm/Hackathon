@@ -14,6 +14,6 @@ namespace Hackathon
 
     public enum CompanySectorType { Undefined, Industry, Consulting, Auditing, Banking, Financial, Retail, Construction, RealEstate, Services, IT }
 
-    public enum InvoiceStatus { Dispatched, Paid, Rejected }
+    public enum InvoiceStatus { Sent, Paid }
 
 }

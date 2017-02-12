@@ -20,19 +20,10 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ContractedServiceConfiguration.ExchangeServiceParameter1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiversificationPlan.Observations)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.ExchangeService.ExchangeServiceName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Value)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Observations)
@@ -43,19 +34,10 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ContractedServiceConfiguration.ExchangeServiceParameter1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiversificationPlan.Observations)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ExchangeService.ExchangeServiceName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Observations)
